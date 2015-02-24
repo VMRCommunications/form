@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<!--This is an example of a from which will create a new Contact & Client in AffinityLive-->
+<html>
+<head>
+            <script src='https://www.google.com/recaptcha/api.js'> 
+            <!--Required reCAPTCHA script for Google.  reCAPTCHA itself is an optional security measure-->
+            </script> 
+
+</head>
+<body>
+
+<form action="https://YOURSITE.affinitylive.com/forms/public/contact" method="POST"> 
+<!--Replace YOURSITE with your AffinityLive account name.-->
+
+            <input type="hidden" name="redirect" value="http://YOURSITE.com/THANKYOUPAGE.html"/>
+            <!--This is an optional line which will redirect people who use your form to your thank you page-->
+
+            <input type="hidden" name="diary_send_ALERT" value="contact"/>
+            <!--This is an optional line which will create an Activity in your AffinityLive account when the form is submitted.  This is a great way to send an alert   
+
+            to someone when a new Contact is created.  The alert will appear under the new contact page.-->
+
+            <input type="hidden" name="diary_cc_ALERT" value="person1@domain.com, person2@domain.com, person3@domain.com"/>
+            <!--This is an optional line which will CC the alert to any address(es) desired-->
+
+            <input type="hidden" name="diary_to_ALERT" value="staff_2"/>
+            <!--This is an optional line which will send the new contact notification to a staff member, ID#2.  Staff ID#2 is the person who originally created your    
+
+            AffinityLive account-->
+
+            <input type="hidden" name="diary_subject_ALERT" value="New contact created via the form"/>
+            <!--This line is required for all alerts.  This is the subject/title of the alert-->
+
+            <input type="hidden" name="diary_body_ALERT" value="Once again, our form has successfully garnered a new contact."/>
+            <!--This is an optional line which will determine the body/content of your alert.-->
+
+            <div class="four columns offset-by-four">
+                <label for="contact_firstname">First Name</label><br />
+                <input id="contact_firstname" name="contact_firstname" value="" />
+            </div>
+            
+            <div class="four columns">
+                <label for="contact_lastname">Last Name</label><br />
+                <input id="contact_lastname" name="contact_surname" value="" />
+            </div>
+            
+            <div class="four columns offset-by-four">
+                <label for="company_name">Company</label><br />
+                <input id="company_name" name="company_name" value="" />
+            </div>
+            
+            <div class="four columns">
+                <label for="affiliation_email">Email Address</label><br />
+                <input id="affiliation_email" name="affiliation_email" value="" />
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6Lf4bMQSAAAAAJQNMg6QOB71CVCjM1OkAYkQ7d0">
+            <!--This generates the reCAPTCHA field.  You'll need to use >
+            </div>
+            
+            <div class="eight columns offset-by-four">
+                <button type="submit">Submit Form</button>
+            </div>
+
+            </form>
+</body>
